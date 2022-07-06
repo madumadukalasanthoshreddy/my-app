@@ -15,7 +15,7 @@ pipeline {
       }
     }
     stage("deploy to dev"){
-      step {
+      steps {
         sshagent(['tomcat-dev']) {
           sh "mv target/*.war target/webapp.war"
           sh "SCP -o StrictHostKeyChecking=no target/webapp.war ec2-user@172.31.87.89:/opt/tomcat9/webapps/"
