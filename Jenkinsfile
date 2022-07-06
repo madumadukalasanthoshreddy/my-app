@@ -1,9 +1,6 @@
 pipeline {
   agent any
-   tools {
-    maven 'maven3'
-  }
-   stages {
+ stages {
     stage('SCM checkout') {
       steps {
         git credentialsId: 'java', url: 'https://github.com/madumadukalasanthoshreddy/my-app'
@@ -14,4 +11,5 @@ pipeline {
         sh 'mvn clean package'
       }
     }
- 
+ }
+}
