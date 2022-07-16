@@ -9,7 +9,7 @@ pipeline {
 //         git credentialsId: 'java', url: 'https://github.com/madumadukalasanthoshreddy/my-app'
 //       }
 //     }
-    stage ("maven build") {
+    stage ("Maven Build") {
       steps {
         sh 'mvn clean package'
       }
