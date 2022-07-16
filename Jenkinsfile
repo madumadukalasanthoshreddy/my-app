@@ -1,18 +1,9 @@
-@Library("mylibs") _
 pipeline {
   agent any
-  tools {
-    maven 'maven2'
-  }
   stages{
-    stage("Maven Build"){
+    stage("scm checkout") {
       steps{
-        sh "mvn clean package"
-      }
-    }
-    stage("Deploy To Dev"){
-      steps{
-        tomcatDeploy("tomcat-dev","ec2-user",["172.31.87.89","172.31.87.89"])
+        git credentialsId: 'java', url: 'https://github.com/madumadukalasanthoshreddy/my-app'
       }
     }
   }
