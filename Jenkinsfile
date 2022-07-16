@@ -6,7 +6,7 @@ pipeline {
    stages{
     stage('SCM checkout') {
       steps {
-        git credentialsId: 'java', url: 'https://github.com/madumadukalasanthoshreddy/my-app'
+        git credentialsId: 'javahome', url: 'https://github.com/madumadukalasanthoshreddy/my-app',branch : "master"
       }
     }
     stage ('Maven Build') {
