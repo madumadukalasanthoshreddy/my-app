@@ -3,7 +3,7 @@ pipeline {
   tools {
     maven 'maven2'
   }
-//   stages{
+   stages{
 //     stage("SCM checkout") {
 //       steps{
 //         git credentialsId: 'java', url: 'https://github.com/madumadukalasanthoshreddy/my-app'
